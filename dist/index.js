@@ -9,7 +9,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const facture_1 = __importDefault(require("./facture"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
-const PORT = 5000;
+const PORT = 6000;
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)());
 const url = "mongodb://localhost:27017/db_facturation";
@@ -42,3 +42,11 @@ app.post("/facture", (req, resp) => {
             resp.send(facture);
     });
 });
+/* mongoose.connect('mongodb+srv://sirine:sirine@cluster0.elclxzi.mongodb.net/?retryWrites=true&w=majority',(err,done)=>
+{if (err)
+{console.log(err)}
+if (done){
+    console.log("base de donne connecté avec success!");
+}}
+); */
+app.listen(5000, () => console.log("serveur marche  bien"));

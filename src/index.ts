@@ -7,7 +7,7 @@ import { json } from "stream/consumers";
 import facture from "./facture";
 import cors from "cors";
 const app = express();
-const PORT = 5000;
+const PORT = 6000;
 app.use(bodyParser.json());
 app.use(cors());
 const url = "mongodb://localhost:27017/db_facturation";
@@ -35,3 +35,12 @@ app.post("/facture", (req: Request, resp: Response) => {
     else resp.send(facture);
   });
 });
+app.listen(5000, () => console.log("serveur marche  bien"));
+
+/* mongoose.connect('mongodb+srv://sirine:sirine@cluster0.elclxzi.mongodb.net/?retryWrites=true&w=majority',(err,done)=>
+{if (err)
+{console.log(err)}
+if (done){
+    console.log("base de donne connecté avec success!");
+}}
+); */
